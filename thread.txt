@@ -1,0 +1,72 @@
+1:
+from threading import *
+import time
+
+def display():
+    time.sleep(5)
+    print("Hey Aman!How are you")
+t = Thread(target=display)
+t.start()
+output:
+enter the number to calculate factorial:5
+120
+
+2:
+from threading import *
+import time
+
+class num(Thread):
+    def run(self):
+        for i in range(10):
+            print(i+1)
+            time.sleep(1)
+
+t = num()
+t.start()
+output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+3:
+from threading import *
+import time
+
+def display(num):
+    i=0
+    for n in num:
+        print(n)
+        i=i+1
+        time.sleep(2**i)
+
+
+num = ['pizza','burger','maggie','coffee','poison']
+t=Thread(target=display,args=(num,))
+t.start()
+output:
+pizza
+burger
+maggie
+coffee
+poison
+
+4:
+from threading import *
+import math
+class fact(Thread):
+    def run(self):
+        a=int(input("enter the number to calculate factorial:"))
+        print(math.factorial(a))
+t=fact()
+t.start()
+output:
+enter the number to calculate factorial:5
+120
+
